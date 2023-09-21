@@ -14,7 +14,7 @@ This repository contains the source code for the AgileGPt project, which serves 
 **The API provides the following features:**
 
 - **Get data:** Get history of user messages and AI responses.
-- **Real-time data transferring **: Allow to send and get data in real-time.
+- **Real-time data transferring:** Allow to send and get data in real-time.
 
 ## Technologies
 
