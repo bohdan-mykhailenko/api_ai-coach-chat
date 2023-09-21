@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Message } from '../models/message.model'; // Import your Sequelize Message model
-import { API_KEY } from 'src/const';
 import OpenAI from 'openai';
+import { API_KEY } from 'src/config/api-key.config';
 
 @Injectable()
-export class OpenAiService {
+export class MessagesService {
   private readonly openai: OpenAI;
 
   constructor(

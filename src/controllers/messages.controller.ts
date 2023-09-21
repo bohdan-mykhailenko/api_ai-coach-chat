@@ -1,25 +1,25 @@
 import { Controller, Post, Get, Body } from '@nestjs/common';
-import { OpenAiService } from './openAi.service';
+import { MessagesService } from '../services/messages.service';
 import { Message } from 'src/models/message.model';
 
-@Controller('') // Specify the base route for this controller
-export class OpenAiController {
-  constructor(private readonly openAiService: OpenAiService) {}
+@Controller() // Specify the base route for this controller
+export class MessagesController {
+  constructor(private readonly messagesService: MessagesService) {}
 
   @Get('/messages') // Define a GET route to retrieve all messages
   async findAllMessages(): Promise<Message[]> {
-    const messages = await this.openAiService.getAllMessages();
+    const messages = await this.messagesService.getAllMessages();
 
     return messages;
   }
 
-  @Post('/generate-story')
+  @Post('/ai-response')
   async generateUserStory(@Body() requestBody) {
     const { userStoryInput } = requestBody;
 
     // Call the generateUserStory method to generate and return the user story
     const generatedStory =
-      await this.openAiService.generateUserStory(userStoryInput);
+      await this.messagesService.postUserStory(userStoryInput);
 
     return { generatedStory };
   }
