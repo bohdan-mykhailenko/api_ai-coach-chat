@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "bohdan-mykhailenko",
+    "password": "S2uwPg6nbIRm",
+    "database": "ai_coach",
+    "host": "ep-sweet-heart-65946773.eu-central-1.aws.neon.tech",
+    "dialect": "postgres",
+    "ssl": true,
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
