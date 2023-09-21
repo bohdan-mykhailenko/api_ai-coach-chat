@@ -4,6 +4,9 @@
 .pnp.js
 .gitignore
 package-lock.json
+/config
+/models
+/migrations
 
 # testing
 /coverage
