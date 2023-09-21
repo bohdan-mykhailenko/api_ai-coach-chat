@@ -5,7 +5,7 @@ import {
 } from '@nestjs/websockets';
 import { Server } from 'socket.io';
 import { Injectable } from '@nestjs/common';
-import OpenAI from 'openai'; // Import the OpenAI library
+import OpenAI from 'openai';
 import { API_KEY } from 'src/config/api-key.config';
 import { MessagesService } from 'src/services/messages.service';
 import { CreateMessageDto } from 'src/dto/create-message.dto';
@@ -32,19 +32,26 @@ export class SocketGateway {
         messages: [
           {
             role: 'system',
-            content: 'You are a helpful Agile Coach.',
+            content:
+              'You are a knowledgeable Agile Coach here to assist with Agile methodologies.',
+          },
+
+          {
+            role: 'assistant',
+            content:
+              'As a project manager, I want to assign tasks to team members so that I can track progress. Agile methodologies help achieve this goal by promoting collaboration, transparency, and adaptability.',
+          },
+          {
+            role: 'assistant',
+            content:
+              'In Agile, you can use tools like Kanban boards or Scrum ceremonies such as daily stand-ups to manage tasks and monitor progress. Feel free to ask specific questions or request advice on Agile practices.',
           },
           {
             role: 'user',
             content: payload.content,
           },
-          {
-            role: 'assistant',
-            content:
-              'As a project manager, I want to assign tasks to team members so that I can track progress.',
-          },
         ],
-        max_tokens: 10,
+        max_tokens: 500,
         model: 'gpt-3.5-turbo',
       });
 
@@ -61,7 +68,6 @@ export class SocketGateway {
 
       this.server.emit('responseFromOpenAI', assistantMessage);
     } catch (error) {
-      console.error(error);
       this.server.emit('responseFromOpenAI', { message: 'Error from OpenAI' });
     }
   }
