@@ -66,11 +66,14 @@ npm run start:dev
 ```
 
 
-## Endpoints
+## Endpoints and messages
 
-The base URL for the API is: **https://aicoachbackend-production.up.railway.app/**
+The base URL for the API is: **https://aicoachbackend-production.up.railway.app**
 
 <table>
+ <tr>
+        <th colspan="4">HTTP</th>
+    </tr>
     <tr>
         <th>
         	Method
@@ -97,6 +100,51 @@ The base URL for the API is: **https://aicoachbackend-production.up.railway.app/
         </td>
         <td>
         	NULL
+        </td>
+    </tr>
+</table>
+
+
+<table>
+ <tr>
+        <th colspan="3">Web Socket</th>
+    </tr>
+    <tr>
+        <th>
+        	Message
+        </th>
+        <th>
+        	Description
+        </th>
+        <th>
+        	Body
+        </th>
+    </tr>
+    <tr>
+        <td>
+        messageToOpenAI
+        </td>
+        <td>
+        	Send user input to open AI model
+        </td>
+        <td>
+        	<pre>
+{
+ role: string;
+ content: string;
+}
+         </pre>
+        </td>
+    </tr>
+<tr>
+        <td>
+        responseFromOpenAI
+        </td>
+        <td>
+        	Get response from open AI model
+        </td>
+        <td>
+        	null
         </td>
     </tr>
 </table>
