@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import { Model, Column, Table, DataType } from 'sequelize-typescript';
 
 @Table({
