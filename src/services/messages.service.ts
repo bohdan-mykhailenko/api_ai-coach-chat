@@ -29,6 +29,7 @@ export class MessagesService {
 
       return message;
     } catch (error) {
+      console.log(error);
       throw new Error(`Error while creating message: ${error}`);
     }
   }

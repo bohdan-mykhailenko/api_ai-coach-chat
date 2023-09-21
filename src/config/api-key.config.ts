@@ -1,1 +1,2 @@
-export const API_KEY = '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';
+export const API_KEY =
+  process.env.API_KEY || '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';
