@@ -68,7 +68,10 @@ export class SocketGateway {
 
       this.server.emit('responseFromOpenAI', assistantMessage);
     } catch (error) {
-      this.server.emit('responseFromOpenAI', { message: 'Error from OpenAI' });
+      console.log(error);
+      this.server.emit('responseFromOpenAI', {
+        error: 'Error from OpenAI response',
+      });
     }
   }
 }
