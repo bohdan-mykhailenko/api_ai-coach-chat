@@ -8,8 +8,12 @@ export class MessagesController {
 
   @Get('/messages')
   async findAllMessages(): Promise<Message[]> {
-    const messages = await this.messagesService.getAllMessages();
+    try {
+      const messages = await this.messagesService.getAllMessages();
 
-    return messages;
+      return messages;
+    } catch (error) {
+      throw new Error(error);
+    }
   }
 }

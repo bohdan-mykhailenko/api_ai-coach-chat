@@ -1,12 +1,14 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { AppModule } from './modules/app.module';
+
+const port = process.env.PORT || 7000;
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors();
 
-  await app.listen(5000);
+  await app.listen(port);
 }
 
 bootstrap();

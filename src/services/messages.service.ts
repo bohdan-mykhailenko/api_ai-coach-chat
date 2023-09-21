@@ -13,9 +13,10 @@ export class MessagesService {
   async getAllMessages(): Promise<Message[]> {
     try {
       const messages = await Message.findAll();
+
       return messages;
     } catch (error) {
-      throw new Error('Error fetching messages');
+      throw new Error(`Error while fetching messages: ${error}`);
     }
   }
 
@@ -28,7 +29,7 @@ export class MessagesService {
 
       return message;
     } catch (error) {
-      throw new Error(error);
+      throw new Error(`Error while creating message: ${error}`);
     }
   }
 }
