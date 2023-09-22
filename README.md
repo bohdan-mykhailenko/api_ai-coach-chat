@@ -59,7 +59,15 @@ export const db = {
 npm run migrate
 ```
 
-5. Start the server:
+5. Set openAI secret key:
+- Open the `config/api-key.config.ts` file and add your secret key.
+- Add environment variable `API_KEY` with your key.
+
+```shell
+npm run migrate
+```
+
+6. Start the server:
 
 ```shell
 npm run start:dev
