@@ -2,7 +2,7 @@
 
 ## Overview
 
-- [**Demo Link**](https://bohdan-mykhailenko.github.io/ai_coach/)
+- [**Demo Link**](https://bohdan-mykhailenko.github.io/ai_coach/#/)
 - [**Frontend Repo**](https://github.com/bohdan-mykhailenko/ai_coach)
 
 ## Description
