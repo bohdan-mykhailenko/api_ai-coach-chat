@@ -42,7 +42,7 @@ npm install
 ```
 
 3. Set up PostgreSQL Database:
- - Open the `config/databse.config.ts` file and add your PostgreSQL database configuration.
+ - Open the `src/config/database.config.ts` file and add your PostgreSQL database configuration.
 
 ```
 export const db = {
@@ -60,7 +60,7 @@ npm run migrate
 ```
 
 5. Set openAI secret key:
-- Open the `config/api-key.config.ts` file and add your secret key.
+- Open the `src/config/api-key.config.ts` file and add your secret key.
 - Add environment variable `API_KEY` with your key.
 
 ```shell
